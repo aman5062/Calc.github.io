@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>   
+
+
+  <title></title>
+</head>
+<style type="text/css">
+  #box{
+    background-color: skyblue;
+    height: 500px;
+    width: 300px;
+    margin-top: 100px;
+    border: 2px solid black;
+  }
+  #head{
+    background-color: greenyellow;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    font-family: monospace;
+    color: brown;
+    
+  }
+  #title{
+    font-size: 25px;
+    
+  }
+  #center{
+    height: 385px;
+    width: 300px;
+    border-bottom: 1px solid white;
+    text-align: left;
+    padding-left: 10px;
+  }
+  #bottom{
+    background-color: skyblue;
+    height: 50px;
+    width: 300px;
+     text-align: left;
+     position: absolute;
+  }
+  #txtbox{
+    width: 220px;
+    height: 50px;
+    position: absolute;
+  }
+  #txt{
+    height: 40px;
+    margin-top: 3px;
+    width: 100%;
+  }
+  #btnbox{
+    position: relative;
+    float: right;
+    height: 45px;
+    width: 23%;
+    margin-top: 3px;
+  }
+  #btn{
+    height: 100%;
+    width: 100%;
+  }
+  .green-color {
+        color:green;
+    }
+    
+</style>
+<body><center>
+<div id="box">
+  <div id="head">
+    <br>
+    <font id="title">Inquiry</font>
+  </div>
+  <div id="center">
+    
+  </div>
+  <div id="bottom">
+    <div id="txtbox"><input type="text" name="txt" id="txt" placeholder="Ask Your Doubt...." ondragenter="send()"></div>
+    <div id="btnbox"><button style="font-size:24px" id="btn" onclick="send()"><i class='fa fa-send green-color'></i>
+</button>
+</div>
+  </div>
+</div></center>
+<script>
+function send() {
+var txtbox = document.getElementById('center').value;
+if(txtbox==""){
+  var text = document.getElementById('txt').value; 
+  let ele = document.getElementById('center');
+  ele.innerHTML =text;
+  document.getElementById('txt').value = "";
+}
+else{
+var text = document.getElementById('txt').value; 
+let ele = document.getElementById('center');
+ele.innerHTML +="<br>"+ text;
+document.getElementById('txt').value = "";
+}
+}
+var input = document.getElementById("txt");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("btn").click();
+  }
+});
+
+</script>
+</body>
+</html>
