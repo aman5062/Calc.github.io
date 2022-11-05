@@ -7,6 +7,27 @@
             "width=device-width, user-scalable=no" />
     <title>calculator</title>
 </head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <script>
+		function dis(val) 
+		{ 
+			document.getElementById("screen").value+=val 
+		};
+		function solve(){
+          var doit = document.getElementById('screen').value;
+          document.getElementById('screen').value = eval(doit);
+        };
+      function clr(){
+        document.getElementById('screen').value ="";
+      }
+		function backspace(){
+            var val = document.getElementById('screen').value;
+            var length = val.length;
+            document.getElementById('screen').value = val.slice(0, -1);
+        }
+		//function that evaluates the digit and return result 
+	
+	</script> 
 <style>
     *{
         padding: 0;
@@ -31,14 +52,78 @@
         width: 497px;
         outline: none;
         height: 200px;
+        font-size: 100px;
+        
     }
+    #tab{
+        height: 520px;
+        width: 500px;
+        outline: none;
+        margin: none;
+    }
+    .buttons{
+        height: 100px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: transparent;
+        font-size: x-large;
+        padding: none;
+        margin: none;
+
+    }
+    button{
+        width: 100px; 
+
+    }
+   #btn_layout tr td{
+    width: 25%;
+   }
 </style>
 <body><center>
     <div id="main">
         <div id="scr">
             <input type="text" placeholder="0" readonly name="screen" id="screen">
         </div>
-        <div id="btn_layout"></div>
+        <div id="btn_layout">
+            <table id="tab"> 
+                <tr> 
+                    <!-- create button and assign value to each button -->
+                    <!-- dis("1") will call function dis to display value -->
+                    <td><input  type="button"
+                    class="buttons" value="C" onclick="clr()"/> </td> 
+                    <td><input type="button" class="buttons" value="%" onclick="dis('%')"/> </td> 
+                    <td><button class="buttons" onclick="backspace()"><i class="material-icons">backspace</i></button></td> 
+                    <td><input type="button" class="buttons" value="/" onclick="dis('/')"/> </td>
+                   
+                </tr> 
+                <tr> 
+                    <td><input type="button" class="buttons" value="7" onclick="dis('7')"/> </td> 
+                    <td><input type="button" class="buttons" value="8" onclick="dis('8')"/> </td> 
+                    <td><input type="button" class="buttons" value="9" onclick="dis('9')"/> </td> 
+                    <td><input type="button" class="buttons" value="X" onclick="dis('*')"/> </td> 
+                </tr> 
+                <tr> 
+                    <td><input type="button" class="buttons" value="4" onclick="dis('4')"/> </td> 
+                    <td><input type="button" class="buttons" value="5" onclick="dis('5')"/> </td> 
+                    <td><input type="button" class="buttons" value="6" onclick="dis('6')"/> </td> 
+                    <td><input type="button" class="buttons" value="-" onclick="dis('-')"/> </td> 
+                </tr> 
+                <tr> 
+                    <td><input type="button" class="buttons" value="1" onclick="dis('1')"/> </td> 
+                    <td><input type="button" class="buttons" value="2" onclick="dis('2')"/> </td> 
+                    <!-- solve function call function solve to evaluate value -->
+                    <td><input type="button" class="buttons" value="3" onclick="dis('3')"/> </td> 
+                    <td><input type="button" class="buttons" value="+" onclick="dis('+')"/> </td> 
+                </tr> 
+                <tr> 
+                    <td><input type="button" class="buttons" value="00" onclick="dis('00')"/> </td> 
+                    <td><input type="button" class="buttons" value="0" onclick="dis('0')"/> </td> 
+                    <!-- solve function call function solve to evaluate value -->
+                    <td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
+                    <td><input type="button" class="buttons" value="=" onclick="solve()"/> </td> 
+                </tr> 
+            </table>
+        </div>
     </div></center>
 </body>
 </html>
