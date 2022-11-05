@@ -11,14 +11,24 @@
  <script>
 		function dis(val) 
 		{ 
-			document.getElementById("screen").value+=val 
-		};
+			document.getElementById("screen").value+=val ;
+            var length = document.getElementById('screen').value.length;
+        if(6<=length){
+            document.getElementById('screen').style.fontSize = "50px";
+        }
+        else{
+            document.getElementById('screen').style.fontSize = "100px"; 
+        }
+		}
 		function solve(){
           var doit = document.getElementById('screen').value;
           document.getElementById('screen').value = eval(doit);
-        };
+        }
       function clr(){
         document.getElementById('screen').value ="";
+      }
+      function check(){
+      
       }
 		function backspace(){
             var val = document.getElementById('screen').value;
@@ -53,6 +63,7 @@
         outline: none;
         height: 200px;
         font-size: 100px;
+        
         
     }
     #tab{
