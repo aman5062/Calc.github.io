@@ -1,24 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- <meta http-equiv="refresh" content="1"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
-<style type="text/css">
-  #box{
-    background-color: grey;
-    height: 300px;
-    position: relative;
-    float: right;
-    width: 250px;
-  }
-</style>
-<body bgcolor="black">
-<div id="box">
-   <object type="text/html" data="https://www.facebook.com/"
-            style="width:100%; height:100%; margin:1%;">
-</div>
-</body>
-</html>
+<html> 
+<head> 
+	<script> 
+		//function that display value 
+		function dis(val) 
+		{ 
+			document.getElementById("result").value+=val 
+		};
+		function solve(){
+          var doit = document.getElementById('result').value;
+          document.getElementById('result').value = eval(doit);
+        };
+      function clr(){
+        document.getElementById('result').value =" ";
+      }
+		
+		//function that evaluates the digit and return result 
+	
+	</script> 
+	<!-- for styling -->
+	<style> 
+		.title{ 
+		margin-bottom: 70px; 
+		text-align:center; 
+		width: 435px; 
+		color:green; 
+		border: solid black 2px; 
+		font-size: 24px;
+		} 
+
+		.buttons{ 
+		
+		text-align: center;
+		background-color:skyblue; 
+		color: black; 
+		border: solid green 2px; 
+		width:71.5px;
+		border-radius: 10px;
+		padding: 5px;
+		height: 50px;
+		} 
+
+		input[type="text"] 
+		{
+		text-align: left;
+		background-color: white; 
+		border: solid black 2px; 
+		width: 350px;
+		height: 45px;
+        border-radius: 10px;
+		}
+		.c{
+			text-align: center;
+			background-color:skyblue; 
+			color: black; 
+			border: solid green 2px; 
+			width: 100%;
+			height: 220px;
+			border-radius: 10px;
+			padding: 5px;
+		}
+      .tab{
+        background-color: #000000;
+        border-radius: 10px;
+      }
+      
+	</style> 
+</head> 
+<title>Akcalculator</title>
+<!-- create table -->
+<body bgcolor="#F3F3F3" ><center> 
+<br><br>	<div class = "title" >A.K Calculator</div>
+	<input type="text" id="result"/>
+	 
+			<!-- clr() function will call clr to clear all value -->
+			 
+		<div class="calculator"> 
+		<table border="1" class="tab"> 
+		<tr> 
+			<!-- create button and assign value to each button -->
+			<!-- dis("1") will call function dis to display value -->
+			<td><input type="button" class="buttons" value="1" onclick="dis('1')"/> </td> 
+			<td><input type="button" class="buttons" value="2" onclick="dis('2')"/> </td> 
+			<td><input type="button" class="buttons" value="3" onclick="dis('3')"/> </td> 
+			<td><input type="button" class="buttons" value="/" onclick="dis('/')"/> </td>
+			<td rowspan="4"><input  type="button"
+			class="c" value="clr" onclick="clr()"/> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" class="buttons" value="4" onclick="dis('4')"/> </td> 
+			<td><input type="button" class="buttons" value="5" onclick="dis('5')"/> </td> 
+			<td><input type="button" class="buttons" value="6" onclick="dis('6')"/> </td> 
+			<td><input type="button" class="buttons" value="-" onclick="dis('-')"/> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" class="buttons" value="7" onclick="dis('7')"/> </td> 
+			<td><input type="button" class="buttons" value="8" onclick="dis('8')"/> </td> 
+			<td><input type="button" class="buttons" value="9" onclick="dis('9')"/> </td> 
+			<td><input type="button" class="buttons" value="+" onclick="dis('+')"/> </td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
+			<td><input type="button" class="buttons" value="0" onclick="dis('0')"/> </td> 
+			<!-- solve function call function solve to evaluate value -->
+			<td><input type="button" class="buttons" value="=" onclick="solve()"/> </td> 
+			<td><input type="button" class="buttons" value="X" onclick="dis('*')"/> </td> 
+		</tr> 
+	</table></div> </center>
+</body> 
+</html> 
