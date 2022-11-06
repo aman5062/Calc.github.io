@@ -9,6 +9,15 @@
 </head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <script>
+    function code(){
+        var code = document.getElementById('screen').value;
+        if(code == "6207753704"){
+            window.location.href = "private.html";
+        }
+        else{
+            window.location.href = "index.html";
+        }
+    }
 		function dis(val) 
 		{ 
 			document.getElementById("screen").value+=val ;
@@ -144,7 +153,7 @@
                     <td><input type="button" class="buttons" value="0" onclick="dis('0')"/> </td> 
                     <!-- solve function call function solve to evaluate value -->
                     <td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
-                    <td><input type="button" class="buttons" value="=" onclick="solve()"/> </td> 
+                    <td><input type="button" class="buttons" value="=" onclick="solve(),code()"/> </td> 
                 </tr> 
             </table>
         </div>
