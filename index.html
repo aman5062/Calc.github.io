@@ -9,6 +9,7 @@
 </head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  
+
 <style>
     *{
         padding: 0;
@@ -117,9 +118,14 @@
                     <td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
                     <td><input type="button" class="buttons" value="=" onclick="solve(),code()"/> </td> 
                 </tr> 
+
 		      <tr>
                   
                 <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
+
+		    <tr>
+		      <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
+
                <td><input type="button" class="buttons" value="M-" onclick="subtractFromMemory()" /></td>
             <td><input type="button" class="buttons" value="MR" onclick="recallMemory()" /></td>
     <td><input type="button" class="buttons" value="MC" onclick="clearMemory()" /></td>
@@ -165,8 +171,11 @@
             var length = val.length;
             document.getElementById('screen').value = val.slice(0, -1);
         }
+
 		//function that evaluates the digit and return result 
 		let memory = 0;
+
+		  let memory = 0;
 
           function addToMemory() {
            const screen = document.getElementById('screen');
@@ -179,9 +188,14 @@
        function subtractFromMemory() {
           const screen = document.getElementById('screen');
           const currentValue = parseFloat(screen.value);
+
   if (!isNaN(currentValue)) {
            memory -= currentValue;
     }
+
+          if (!isNaN(currentValue)) {
+           memory -= currentValue;
+ }
 }
 
           function recallMemory() {
@@ -191,8 +205,15 @@
 
        function clearMemory() {
             memory = 0;
+
 }
 
 	
 	</script> 
+
+		//function that evaluates the digit and return result 
+	
+	</script> 
+<style>
+
 </html>
