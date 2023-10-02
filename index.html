@@ -8,9 +8,7 @@
     <title>calculator</title>
 </head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
-
-<style>
+ <style>
     *{
         padding: 0;
         margin: 0;
@@ -83,10 +81,7 @@
         <div id="btn_layout">
             <table id="tab"> 
                 <tr> 
-                    <!-- create button and assign value to each button -->
-                    <!-- dis("1") will call function dis to display value -->
-                    <td><input  type="button"
-                    class="buttons" value="C" onclick="clr()"/> </td> 
+                    <td><input  type="button" class="buttons" value="C" onclick="clr()"/> </td> 
                     <td><input type="button" class="buttons" value="%" onclick="dis('%')"/> </td> 
                     <td><button class="buttons" onclick="backspace()"><i class="material-icons">backspace</i></button></td> 
                     <td><input type="button" class="buttons" value="/" onclick="dis('/')"/> </td>
@@ -107,25 +102,17 @@
                 <tr> 
                     <td><input type="button" class="buttons" value="1" onclick="dis('1')"/> </td> 
                     <td><input type="button" class="buttons" value="2" onclick="dis('2')"/> </td> 
-                    <!-- solve function call function solve to evaluate value -->
                     <td><input type="button" class="buttons" value="3" onclick="dis('3')"/> </td> 
                     <td><input type="button" class="buttons" value="+" onclick="dis('+')"/> </td> 
                 </tr> 
                 <tr> 
                     <td><input type="button" class="buttons" value="00" onclick="dis('00')"/> </td> 
                     <td><input type="button" class="buttons" value="0" onclick="dis('0')"/> </td> 
-                    <!-- solve function call function solve to evaluate value -->
                     <td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
                     <td><input type="button" class="buttons" value="=" onclick="solve(),code()"/> </td> 
                 </tr> 
-
-		      <tr>
-                  
-                <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
-
 		    <tr>
 		      <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
-
                <td><input type="button" class="buttons" value="M-" onclick="subtractFromMemory()" /></td>
             <td><input type="button" class="buttons" value="MR" onclick="recallMemory()" /></td>
     <td><input type="button" class="buttons" value="MC" onclick="clearMemory()" /></td>
@@ -172,10 +159,8 @@
             document.getElementById('screen').value = val.slice(0, -1);
         }
 
-		//function that evaluates the digit and return result 
 		let memory = 0;
 
-		  let memory = 0;
 
           function addToMemory() {
            const screen = document.getElementById('screen');
@@ -188,15 +173,10 @@
        function subtractFromMemory() {
           const screen = document.getElementById('screen');
           const currentValue = parseFloat(screen.value);
-
-  if (!isNaN(currentValue)) {
+         if (!isNaN(currentValue)) {
            memory -= currentValue;
-    }
-
-          if (!isNaN(currentValue)) {
-           memory -= currentValue;
- }
-}
+	 }
+       }
 
           function recallMemory() {
            const screen = document.getElementById('screen');
@@ -206,14 +186,7 @@
        function clearMemory() {
             memory = 0;
 
-}
-
-	
+}	
 	</script> 
-
-		//function that evaluates the digit and return result 
-	
-	</script> 
-<style>
 
 </html>
