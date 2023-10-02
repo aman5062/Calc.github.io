@@ -8,19 +8,21 @@
     <title>calculator</title>
 </head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <style>
+ 
+
+<style>
     *{
         padding: 0;
         margin: 0;
     }
     #main{
         
-        height: 720px;
+        height: 700px;
         width: 350px;
     }
     #scr{
         
-        height: 300px;
+        height: 200px;
         width: 350px;
     }
     #btn_layout{
@@ -31,7 +33,7 @@
     #screen{
         width: 346px;
         outline: none;
-        height: 300px;
+        height: 200px;
         font-size: 100px;
         border: none;
         user-select: none;
@@ -81,12 +83,23 @@
         <div id="btn_layout">
             <table id="tab"> 
                 <tr> 
-                    <td><input  type="button" class="buttons" value="C" onclick="clr()"/> </td> 
+                    <!-- create button and assign value to each button -->
+                    <!-- dis("1") will call function dis to display value -->
+                    <td><input  type="button"
+                    class="buttons" value="C" onclick="clr()"/> </td> 
                     <td><input type="button" class="buttons" value="%" onclick="dis('%')"/> </td> 
                     <td><button class="buttons" onclick="backspace()"><i class="material-icons">backspace</i></button></td> 
                     <td><input type="button" class="buttons" value="/" onclick="dis('/')"/> </td>
                    
                 </tr> 
+                
+		    <tr>
+                <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
+  
+                 <td><input type="button" class="buttons" value="M-" onclick="subtractFromMemory()" /></td>
+              <td><input type="button" class="buttons" value="MR" onclick="recallMemory()" /></td>
+      <td><input type="button" class="buttons" value="MC" onclick="clearMemory()" /></td>
+  </tr>
                 <tr> 
                     <td><input type="button" class="buttons" value="7" onclick="dis('7')"/> </td> 
                     <td><input type="button" class="buttons" value="8" onclick="dis('8')"/> </td> 
@@ -102,21 +115,22 @@
                 <tr> 
                     <td><input type="button" class="buttons" value="1" onclick="dis('1')"/> </td> 
                     <td><input type="button" class="buttons" value="2" onclick="dis('2')"/> </td> 
+                    <!-- solve function call function solve to evaluate value -->
                     <td><input type="button" class="buttons" value="3" onclick="dis('3')"/> </td> 
                     <td><input type="button" class="buttons" value="+" onclick="dis('+')"/> </td> 
                 </tr> 
                 <tr> 
                     <td><input type="button" class="buttons" value="00" onclick="dis('00')"/> </td> 
                     <td><input type="button" class="buttons" value="0" onclick="dis('0')"/> </td> 
+                    <!-- solve function call function solve to evaluate value -->
                     <td><input type="button" class="buttons" value="." onclick="dis('.')"/> </td> 
                     <td><input type="button" class="buttons" value="=" onclick="solve(),code()"/> </td> 
                 </tr> 
-		    <tr>
-		      <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
-               <td><input type="button" class="buttons" value="M-" onclick="subtractFromMemory()" /></td>
-            <td><input type="button" class="buttons" value="MR" onclick="recallMemory()" /></td>
-    <td><input type="button" class="buttons" value="MC" onclick="clearMemory()" /></td>
-</tr>
+
+		      <tr>
+                  
+              
+
 
             </table>
         </div>
@@ -159,8 +173,10 @@
             document.getElementById('screen').value = val.slice(0, -1);
         }
 
-		let memory = 0;
+		//function that evaluates the digit and return result 
+		
 
+		  let memory = 0;
 
           function addToMemory() {
            const screen = document.getElementById('screen');
@@ -173,10 +189,15 @@
        function subtractFromMemory() {
           const screen = document.getElementById('screen');
           const currentValue = parseFloat(screen.value);
-         if (!isNaN(currentValue)) {
+
+  if (!isNaN(currentValue)) {
            memory -= currentValue;
-	 }
-       }
+    }
+
+          if (!isNaN(currentValue)) {
+           memory -= currentValue;
+ }
+}
 
           function recallMemory() {
            const screen = document.getElementById('screen');
@@ -186,7 +207,14 @@
        function clearMemory() {
             memory = 0;
 
-}	
+}
+
+	
 	</script> 
+
+	
+	
+	
+
 
 </html>
