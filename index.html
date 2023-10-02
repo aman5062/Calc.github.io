@@ -118,12 +118,10 @@
                     <td><input type="button" class="buttons" value="=" onclick="solve(),code()"/> </td> 
                 </tr> 
 		      <tr>
-                  <td><input type="button" class="buttons" value="CE" onclick="clearEntry()" /></td>
+                  
                 <td><input type="button" class="buttons" value="M+" onclick="addToMemory()" /></td>
                <td><input type="button" class="buttons" value="M-" onclick="subtractFromMemory()" /></td>
             <td><input type="button" class="buttons" value="MR" onclick="recallMemory()" /></td>
-        </tr>
-<tr>
     <td><input type="button" class="buttons" value="MC" onclick="clearMemory()" /></td>
 </tr>
 
@@ -169,13 +167,6 @@
         }
 		//function that evaluates the digit and return result 
 		let memory = 0;
-
-          function clearEntry() {
-             const screen = document.getElementById('screen');
-            const currentValue = screen.value;
-          const newValue = currentValue.slice(0, -1);
-             screen.value = newValue;
-}
 
           function addToMemory() {
            const screen = document.getElementById('screen');
