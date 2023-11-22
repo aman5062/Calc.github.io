@@ -154,13 +154,17 @@
 <script>
     function change() {
         const link = "https://drive.google.com/uc?export=view&id=12cj28xt86Jd-UsChQOuMyshZFLWQVsSU";
+        const link2 = "https://drive.google.com/uc?export=view&id=1HK5T2MMGHlYshPyLwW4Rc6-PEBsLRstT";
         const imgElements = document.getElementsByClassName("image");
 
-        for (let i = 0; i < imgElements.length; i++) {
+        for (let i = 0; i < imgElements.length; i+=2) {
             imgElements[i].src = link;
         }
+    
+    for (let j = 1; j < imgElements.length; j+=2) {
+        imgElements[j].src = link2;
     }
-
+    }
     change();
     
 </script>
