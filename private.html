@@ -3,26 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>calculator</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Image Slideshow</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: black;
+        }
+
+        #main {
+            height: 600px;
+            width: 300px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    #main{ 
-        height: 720px;
-        width: 350px;
-    }
-    img{
-        height: 600px;
-        width: 350px;
-    }
-</style>
-<body><center>
-    <div id="main">
-        <img src="img.jpg">
-    </div></center>
+<body>
+    <center>
+        <div id="main">
+            <img id="image" src="https://drive.google.com/uc?export=view&id=1viTgENczleGtonVEcC4do4Y22Ctu-oqP">
+        </div>
+    </center>
+
+    <script>
+        const imagelink = [
+            "https://drive.google.com/uc?export=view&id=1viTgENczleGtonVEcC4do4Y22Ctu-oqP",
+            "https://drive.google.com/uc?export=view&id=17_gZsiolKyUvIY8tgCySIjhVUMkNAu5d",
+            "https://drive.google.com/uc?export=view&id=1_yAHfX25npvZPcoXe1x_rHAsU6dAsPh3",
+            "https://drive.google.com/uc?export=view&id=1AQcPeQiZoa1p5BRvx1vgVSIpT3DApBlE",
+            "https://drive.google.com/uc?export=view&id=1UuXF8B0UDVPynjJpM3sMiXQNAxWuROZZ",
+            "https://drive.google.com/uc?export=view&id=1fgtA7Rg_T-hn-w6QST2sTnZqiU8hJ8nJ",
+            "https://drive.google.com/uc?export=view&id=1_I4o34F_iH0bttsVuu81uqnq2I0vy6P2",
+            "https://drive.google.com/uc?export=view&id=134hhzLV6EImag9MXdwbgAIVRyWeR0Gxq",
+            "https://drive.google.com/uc?export=view&id=1Hi8aUvhQpAmoDSQ-bsTNBxMVk1HSiOQq",
+            "https://drive.google.com/uc?export=view&id=1WWfB8sX7B9gXUDZlxjtRE4jXAtKhzIVd",
+            "https://drive.google.com/uc?export=view&id=1mjiOYt2qYxnFW2Y3vqxfwcww-P8g9y9l",
+            "https://drive.google.com/uc?export=view&id=1qfPjyDGztyTauqHgAx0MlUGCgOAYbDuJ"
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            document.getElementById("image").src = imagelink[currentIndex];
+            currentIndex = (currentIndex + 1) % imagelink.length;
+        }
+
+        // Initial call to set the first image
+        changeImage();
+
+        // Set interval to change the image every 5000 milliseconds (5 seconds)
+        setInterval(changeImage, 5000);
+    </script>
 </body>
 </html>
