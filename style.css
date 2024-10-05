@@ -1,0 +1,81 @@
+body {
+    background: linear-gradient(to right, #1c92d2, #f2fcfe); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+#scr input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    color: rgb(201, 17, 17);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#scr input[type="text"]:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* #tab {
+    width: 90%;
+    margin-top: 20px;
+} */
+
+.buttons {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5em;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #ff512f, #f09819); /* Button gradient */
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.buttons:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75px;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-15deg);
+    transition: 0.5s;
+}
+
+.buttons:hover:before {
+    left: 120%;
+}
+
+.buttons:hover {
+    background: linear-gradient(to right, #ff512f, #dd2476); /* Hover gradient */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.buttons:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.material-icons {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
